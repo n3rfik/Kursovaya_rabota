@@ -47,12 +47,12 @@ int main()
 	int** matrix;
 	setlocale(LC_ALL, "Russian");
 	while (true) {
-		printf("Ââåäèòå òèï ââîäà:\n1-Àâòîìàòè÷åñêàÿ ãåíåðàöèÿ\n2-Ñ÷èòûâàòü èç ôàéëà\n");
+		printf("Введите тип ввода:\n1-Автоматическая генерация\n2-Считывать из файла\n\n");
 		int answer;
-		printf("Âûáðàòü: ");
+		printf("Выбрать: ");
 		scanf_s("%d", &answer);
 		if (answer == 1) {
-			printf("Ââåäèòå ðàçìåð ìàòðèöû: ");
+			printf("Введите размер матрицы: ");
 			scanf_s("%d", &size);
 			num = (int*)malloc(size * sizeof(int));
 			for (int i = 0; i < size; i++)
@@ -120,11 +120,11 @@ int main()
 			break;
 		}
 		else {
-			printf("Ââåäåííî íåâåðíîå çíà÷åíèå, ïîâòîðèòå ïîïûòêó!\n");
+			printf("Введенно неверное значение, повторите попытку!\n");
 			printf("\n");
 		}
 	}	
-	printf("Ìàòðèöà:\n");
+	printf("Матрица:\n");
 	for (int i = 0; i < size; i++)
 	{
 		for (int j = 0; j < size; j++)
@@ -134,10 +134,10 @@ int main()
 		printf("\n");
 
 	}
-	printf("Ââåäèòå ñòàðòîâóþ âåðøèíó: ");
+	printf("Введите стартовую вершину: ");
 	scanf_s("%d", &s);
 	printf("\n");
-	fprintf(file, "Îáõîä çàêîí÷åí ñ ðåçóëüòàòîì: ");
+	fprintf(file, "Обход закончен с результатом: ");
 	fclose(file);
 	bfs(s,matrix,size);
 	system("PAUSE");
